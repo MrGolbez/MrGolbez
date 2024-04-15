@@ -20,6 +20,7 @@ My journey in computer technology has led me to develop a passion for cybersecur
     <img src="https://img.shields.io/badge/-IDS%2FIPS-990000?&style=for-the-badge&logoColor=white" />
 </div>
 
+
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
 | SIEM Implementation and Log Analysis          | <a href="https://google.com">Detection Lab</a>|
