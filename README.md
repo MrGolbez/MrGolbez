@@ -8,16 +8,17 @@ I am a recent graduate with a profound interest in technology and a dedication t
 My journey in computer technology has led me to develop a passion for cybersecurity, and I am now eager to transition into this field, specifically aiming to join a Security Operations Center (SOC) as a Tier 1 Analyst. With the goal of becoming a Security Reasearcher or Security Manager after completing my Master's in Cybersecurity degree. 
 
 ## Skills
-<img src="https://img.shields.io/badge/-Log%20Analysis-6A0DAD?&style=for-the-badge&logoColor=white" />
-<img src="https://img.shields.io/badge/-Python-3776AB?&style=for-the-badge&logo=Python&logoColor=white" />
-<img src="https://img.shields.io/badge/-TCP/IP-007396?&style=for-the-badge&logoColor=white" />
-<img src="https://img.shields.io/badge/-Incident%20Response-DC3545?&style=for-the-badge&logoColor=white" />
-<img src="https://img.shields.io/badge/-Security%20Frameworks-6C757D?&style=for-the-badge&logoColor=white" />
-<img src="https://img.shields.io/badge/-Active%20Directory-005571?&style=for-the-badge&logo=Active%20Directory&logoColor=white" />
-<img src="https://img.shields.io/badge/-Firewalls-FF5733?&style=for-the-badge&logoColor=white" />
-<img src="https://img.shields.io/badge/-CTI-FFC300?&style=for-the-badge&logoColor=white" />
-<img src="https://img.shields.io/badge/-IDS%2FIPS-990000?&style=for-the-badge&logoColor=white" />
-
+<div>
+    <img src="https://img.shields.io/badge/-Log%20Analysis-6A0DAD?&style=for-the-badge&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Python-3776AB?&style=for-the-badge&logo=Python&logoColor=white" />
+    <img src="https://img.shields.io/badge/-TCP/IP-007396?&style=for-the-badge&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Incident%20Response-DC3545?&style=for-the-badge&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Security%20Frameworks-6C757D?&style=for-the-badge&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Active%20Directory-005571?&style=for-the-badge&logo=Active%20Directory&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Firewalls-FF5733?&style=for-the-badge&logoColor=white" />
+    <img src="https://img.shields.io/badge/-CTI-FFC300?&style=for-the-badge&logoColor=white" />
+    <img src="https://img.shields.io/badge/-IDS%2FIPS-990000?&style=for-the-badge&logoColor=white" />
+</div>
 
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
