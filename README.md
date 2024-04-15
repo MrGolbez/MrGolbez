@@ -29,7 +29,7 @@ My journey in computer technology has led me to develop a passion for cybersecur
 | Incident Response Planning and Execution      | SOC Automation Lab|
 | Case Management with TheHive                  | SOC Automation Lab|
 | Scripting and Automation for Threat Mitigation | SOC Automation Lab|
-| Azure Sentinel Honeypot lab for hardening      | SOC and Detection Lab|
+| Azure Sentinel Honeypot lab for hardening      | Azure Honeynet Lab|
 
 ## Tools
 
