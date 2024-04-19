@@ -21,10 +21,7 @@ The Detection Lab project aimed to establish a controlled environment for simula
 - Telemetry generation tools to create realistic network traffic and attack scenarios.
 
 ## Steps
-drag & drop screenshots here or use imgur and reference them using imgsrc
 
-Every screenshot should have some text explaining what the screenshot is about.
+Step 1: Creating a visual diagram of our Security Operations Center Lab environment. This diagram showcases the workflow, log ingestion, and logical configuration of our environment.
 
-Example below.
-
-*Ref 1: Network Diagram*
+<img src="https://i.imgur.com/cuZUs3V.png" alt="SOC Lab Diagram">
