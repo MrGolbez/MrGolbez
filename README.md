@@ -5,7 +5,7 @@ I am a recent graduate with a profound interest in technology and a dedication t
 
 ## Objective
 
-My journey in computer technology has led me to develop a passion for cybersecurity, and I am now eager to transition into this field, specifically aiming to join a Security Operations Center (SOC) as a Tier 1 Analyst. With the goal of becoming a Security Reasearcher or Security Manager after completing my Master's in Cybersecurity degree. 
+My journey in computer technology has led me to develop a passion for cybersecurity, and I am now eager to transition into this field, specifically aiming to join a Security Operations Center (SOC) as a Tier 1 Analyst. With the goal of becoming a Security Reasearcher or Security Manager after completing my Master's in Cybersecurity degree. This page is a base of operations for me to help document some of my learning and projects. I value hands-on exploration and continuos learning. 
 
 ## Skills
 <div>
@@ -23,13 +23,11 @@ My journey in computer technology has led me to develop a passion for cybersecur
 
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
-| SIEM Implementation and Log Analysis          | <a href="https://google.com">Detection Lab</a>|
-| Network Traffic Monitoring and Attack Detection | <a href="https://google.com">Detection Lab</a>|
-| Security Automation with Shuffle SOAR         | SOC Automation Lab|
-| Incident Response Planning and Execution      | SOC Automation Lab|
-| Case Management with TheHive                  | SOC Automation Lab|
-| Scripting and Automation for Threat Mitigation | SOC Automation Lab|
-| Azure Sentinel Honeypot lab for hardening      | Azure Honeynet Lab|
+| SIEM Implementation and Log Analysis          | <a href= "https://github.com/MrGolbez/MrGolbez/blob/main/SOC%20Automation%20Lab">SOC Automation Lab</a>|
+| Security Automation with Shuffle SOAR         | <a href= "https://github.com/MrGolbez/MrGolbez/blob/main/SOC%20Automation%20Lab">SOC Automation Lab</a>|
+| Case Management with TheHive                  | <a href= "https://github.com/MrGolbez/MrGolbez/blob/main/SOC%20Automation%20Lab">SOC Automation Lab</a>|
+| Scripting and Automation for Threat Mitigation | <a href= "https://github.com/MrGolbez/MrGolbez/blob/main/SOC%20Automation%20Lab">SOC Automation Lab</a>|
+| Azure Sentinel Honeypot lab for hardening      | Azure Honeynet Lab (Walkthrough in progress)|
 
 ## Tools
 
@@ -66,8 +64,7 @@ My journey in computer technology has led me to develop a passion for cybersecur
 </div>
 
 ## Projects
-- Detection Lab
 - SOC Automation Project
-- Azure Sentinel Honeypot Project
-- Active Directory Lab
+- Azure Sentinel Honeypot Project (Ongoing Senior Project)
+- Active Directory Lab (Project guide in progress)
 - Tryhackme & HackTheBox Challenges
