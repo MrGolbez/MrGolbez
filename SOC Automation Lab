@@ -20,8 +20,224 @@ The Detection Lab project aimed to establish a controlled environment for simula
 - Security Operation Center Case Management and SOAR workflow using TheHive and Shuffler.io workflow.
 - Telemetry generation tools to create realistic network traffic and attack scenarios.
 
-## Steps
+## Project Walkthrough
 
-Step 1: Creating a visual diagram of our Security Operations Center Lab environment. This diagram showcases the workflow, log ingestion, and logical configuration of our environment.
+Step 1: I created a diagram of my SOC Automation Lab using draw.io. This diagram helped me logical plan my information flow, servers, and served as a reference when I would run into issues.
 
-<img src="https://i.imgur.com/cuZUs3V.png" alt="SOC Lab Diagram">
+Step 2: Setting up Sysmon on Windows Machines
+- Download the Sysmon v15.14 sysinternals from Microsofts website.
+- Sysmon is used to gather the event logs from the OS in my case Windows.
+- I downloaded the sysmonconfig.xml file from the this github repo.  https://github.com/olafhartong/sysmon-modular/blob/master/sysmonconfig.xml
+- After extracting the sysmonconfig.xml file I put it into the same directory that contains the Sysmon64.exe file to replace the default config.xml file. 
+- Using PowerShell ran the `.\Sysmon64.exe to install Sysmon onto my Windows virtual machine and my local machine so that I could ingest logs from both machines. 
+- With Sysmon installed and configured to ingest my events my next step was to create a Wazuh server.
+
+Step 3: Choosing a Cloud provider to host my servers mainly the Wazuh & TheHive servers. I chose to use Digital Ocean to leverage their $200 credit for new users, but any cloud provider, VMs, or physical hardware will do. 
+
+Step 4: Creating Wazuh Server & TheHive Servers
+- Created a Droplet which is what Digital Ocean calls their Virtual Machines.
+- I chose to have the following specs:
+			- Droplet Type: Basic (Shared CPU)
+			- CPU: Premium Intel
+			- Disk: NVMe SSD
+			- 8 GB / 2 Intel CPUs, 160 GB NVMe SSDs, 5 TB Transfer
+- These specs for an Ubuntu 22.04 LTS x64 Droplet runs about $48/month.
+- With Digital Ocean's $200 credit this lets me run the same specs for both my servers for about 2 months.
+- Chose to use password instead of installing SSH key pairs option, but if using SSH key pair be sure to properly store these SSH key pairs because this server will be public facing. 
+- Pick the Hostnames for each server then click create Droplet. This will take possibly a couple minutes before the Droplets provide their public IP addresses and can be accessed. 
+
+Step 5: Creating a Firewall to protect our servers
+- With my servers being public facing I wanted to ensure that they could not easily be attacked.
+- On the left side panel select Networking --> Click Firewalls tab --> Click Create Firewall --> Configure Firewall.
+  - The default rules for the Firewall will only allow SSH traffic over TCP port 22.
+  - I changed the default Inbound Rule to allow All TCP traffic over all ports over machines public IP address. 
+  - I created the same rule for all UDP ports and traffic to ensure I would not run into issues with configuring my servers. 
+  - Created the firewall keeping the default Outbound rules to ensure my servers are protected.
+- *Side Note* In a production environment you would want to create more granular Firewall rules and properly segmented within the network, but these configurations will work okay for the sake of my lab.
+
+Step 6: Added the Droplets to my Firewall
+- Click Droplets --> Click the Droplet --> Network --> Firewalls --> Add Firewalls --> Select our Firewall --> Droplets tab --> Add droplets --> Search for our Wazuh & TheHive servsers and add them to the Firewall. 
+
+Step 7: Getting ready to configure Wazuh & TheHive servers
+- Copied down the public IP addresses of my severs.
+- SSHed into each server using my terminal to get root terminals for each. 
+  - Digital Ocean has an option to launch the Droplet console, but I am more comfortable navigating my own terminals so I chose to SSH.
+
+Step 8: Configuring Wazuh server
+- I ran the command `apt-get update && apt-get upgrade-y` to update and upgrade the packages.
+- Waited for update and upgrade to finish and restarted the services. 
+- Downloaded and installed the Wazuh package using the following curl command
+  - `curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-install.sh -a`
+- After a few minutes of waiting **patience is indeed a virute in this world** the Wazuh packages will finish installing and you will be shown the User and Password credentials.
+  - VERY IMPORTANT TO COPY THESE DOWN AT THIS TIME! Which I learned the hard and fun way because I skipped right over this while multitasking updating and upgrading my TheHive server.
+  - If this does happen to you as well I found out after some documentation reading that I could extract the Wazuh credentials from the tarball.
+  - `sudo tar -xvf wazuh-install-files.tar`
+- Hazahhh! We now have Wazuh up and running!!! Before logging into the Wazuh dashboard and having some fun we are going to install and configure TheHive!
+
+
+Step 9: Configuring TheHive server
+- We will SSH into TheHive server with root privs and will run the same update and upgrade command we did for Wazuh. 
+  - `apt-get update && apt-get upgrade-y`
+- TheHive has a few dependences that we will need to install to make sure we can get everything up and running.
+  - This is the command I ran to install all of these dependences: 
+  - `apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl  software-properties-common python3-pip lsb-release`
+
+- Next we will be instlling Java, Cassandra, Elasticsearch, and TheHive. 
+- The next few steps will contain the set of scripts I ran to install each package.
+
+Step 10: Installing Java on TheHive server
+- Ran the following script to install Java
+`wget -qO- https://apt.corretto.aws/corretto.key | sudo gpg --dearmor  -o /usr/share/keyrings/corretto.gpg
+echo "deb [signed-by=/usr/share/keyrings/corretto.gpg] https://apt.corretto.aws stable main" |  sudo tee -a /etc/apt/sources.list.d/corretto.sources.list
+sudo apt update
+sudo apt install java-common java-11-amazon-corretto-jdk
+echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment 
+export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"`
+
+Step 11: Installing Cassandra on TheHive Server
+- Ran the following script to install Cassandra
+`wget -qO -  https://downloads.apache.org/cassandra/KEYS | sudo gpg --dearmor  -o /usr/share/keyrings/cassandra-archive.gpg
+echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://debian.cassandra.apache.org 40x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
+sudo apt update
+sudo apt install cassandra`
+
+Step 12: Installing ElasticSearch
+- Ran the following script to install ElasticSearch
+`wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch |  sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+sudo apt-get install apt-transport-https
+echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" |  sudo tee /etc/apt/sources.list.d/elastic-7.x.list
+sudo apt update
+sudo apt install elasticsearch`
+
+Step 13: Optional ElasticSearch configuration you can use if you are having issues with ElasticSearch crashing/shutting down.
+- Create a jvm.options file under /etc/elasticsearch/jvm.options.d
+- I used nano to input the following configurations into the jvm.options file
+  - Dlog4j2.formatMsgNoLookups=true
+  - Xms2g
+  - Xmx2g
+
+Step 14: Installing TheHive
+- Ran the following scrpt to install TheHive
+`wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+sudo apt-get update
+sudo apt-get install -y thehive`
+
+Step 15: TheHive credentials
+- I used the documentation to find out the default credentials for TheHive dashboard.
+  - Default credentials for port 9000
+  - User: admin@thehive.local
+  - Password: secret
+
+Step 16: Reading documentation for TheHive, Wazuh, Cassandra, ElasticSearch
+- I read through documentation to help me modify the configuration files to ensure everyone is playing nice with each other.
+- Had to pay special attention to network configurations, storage locations, and authentication methods. 
+
+Step 17: Modifying Cassandra yaml file
+- Using Nano I made the following modifications to the yaml file
+  - Changed "Cluster Name" from "test cluster" to "hivecluster" 
+    - Take note of what you change the cluster name to here because it will be used later.
+  - "rpc_address" needs to be changed to TheHive's public ip address.
+  - "seed_provider" needs to reflect TheHive's public address. 
+  - This configuration allows Cassandra to communicate with TheHive.
+  - Save the config file.
+- Make sure you always restart any service after changing their configuration files.
+- Cleaned up the old files that were location in var/lib
+
+Step 18: Modifying ElasticSearch config file
+- Used nano to make the following config changes
+  - Remove the comment for "cluster.name" and "node.name" 
+  - "cluster.name" changed to "thehive"
+  - Uncommented "network.host" and changed the IP to TheHive's public IP.
+  - Be sure to take note that elasticsearch's default http port is 9200.
+    - I went ahead and uncommented this but you do not have to if using th default port.
+    - This is also where you can change the port that elasticsearch uses for http.
+  - Configred "cluster.initial_master_nodes" to be uncommented
+  - Deleted "node-2" and only left "node-1"
+      - This node section is how you can scale elasticsearch to multiple hosts.
+      - Since this is my homelab I will only be using 1 host hence leaving only "node-1"
+
+Step 19: TheHive ownership
+- TheHive needs access to the files that are stored in /opt/thp so that TheHive can write to those files.
+- By default "root" user will own all the files within /opt/thp 
+- Verfied this using `ls -la /op/thp`
+- Changed ownership using chown so that TheHive is has ownership over /opt/thp files
+
+Step 20: TheHive configuration files
+- Now that TheHive user and group have ownership we will edit the application.conf file.
+- The main thing we are configuring is the database and index configs.
+  - We will be configuring these with TheHive's public IP.
+  - This is also where our "clustername" we used for cassandra is going to be be used.
+  - Change "application.baseURL" from local host to TheHive's public IP.
+- A thing to take note of is that at the bottom of the config file we can see that TheHive uses Cortex and MISP.
+- Cortex is the data enrichment and response capability.
+- MISP is the Cyber Threat Intelligence (CTI) platform
+- HAZAH!!!!!! We have configured TheHive!
+
+Step 21: Login to TheHive's dashboard
+- I logged into TheHive's dashboard using it's public ip on port 9000 and used the default credentials provided.
+- We can successfully explore TheHive's dashboard which I did for a bit because it is nice seeing the fruits of our labor after configuring and installing all these files. 
+- We are not done yet and next will be configuring Wazuh!
+
+Step 22: Configuring the Wazuh Dashboard
+- I will be adding a Windows Agent to Wazuh so we can start gaining telemetry.
+- Wazuh has an agent installer or can use the powershell script they provide.
+- After creating name and adding wazuh public ip ran a powershell script that is provided by wazuh and start the agent
+- NET START WazuhSvc
+- Now we have our windows Agent up and running and can gain telemetry 
+- I will be trying to obtain information on mimikatz attack
+
+Step 23: Ingesting Telemetry into Wazuh
+- Open up the ossec agent --> open the ossec.conf so we can edit the log files. 
+- Copying one of the localfile tags and pasting it but changing the location to gather from our sysmon channel name that we grabbed from event viewer. 
+- Grabbed the channel name for sysmon and powershell and added localfile tags under log analysis to ingest log data from those services.
+- Now that we have changed our config we will need to resatrt the Wazuh service
+- We will be testing out Wazuh dashboard for detecting mimikatz a tool that tries to pull credentials from a machine. 
+
+Step 24: Running mimikatz 
+- Running mimikatz did not trigger an event in wazuh by default. 
+	- This means will have to update the ossec.conf file on the wazuh server to log all events. 
+- Changing the ossec.conf file to log all events this triggers Wazuh to archive all logs within the /var/ossec/logs/archives directory
+- For Wazuh to start ingesting these logs we will need to update the config file for filebeat
+- This is done by updating the "filebeat.modules" archives to state "true" in the config file.
+- We will go back to the Wazuh dashboard to create an index pattern under stack management
+- Index patterns already have ones for alerts, monitoring, statistics, and we will be creating one for archives. 
+
+Step 25: Customer Wazuh Rule
+- Next we will be creating a custom rule in Wazuh to detect mimikatz using a sysmon event id 
+"1. customer rules in wazuh must be at 100002
+	- The mimikatz rule field name will be originalFileName - detecting mimikatz\/exe - and the ID of T1003 which is the ID for credential dumping which is what mimikatz does. "
+
+Step 26: Ensuring our mimikatz rule worked
+- We will run mimikatz again and hurray we see activity on our Wazuh logs about mimikatz being run! 
+- We can ensure our rule still works by changing the name of the mimikatz tool and running it.
+- We will see that it still detected mimikatz because used the "originalFilename" when creating the rule.
+- This is important because attackers will not always use default names as part of the evasion process. 
+
+Step 26: Integrating SOAR with Shuffler into Wazuh Manager
+- Naviagte to https://shuffler.io and create an account to begin integrating Shuffler into Wazuh.
+- Obtain the webhook URL from Shuffler, typically found in the integration settings.
+- On the Wazuh Manager navigate to the Integrations section.
+- Select Shuffler as the integration to add.
+- Provide the webhook URL obtained from Shuffler.
+- Specify the desired alert levels, formats, and rules for automated responses.
+- Once an alert is triggered into the Wazuh manager say at Alert level 4 that we set up this will trigger an event in Shuffler which we will integrate into TheHive for case management and Automationg for the SOC Analyst.
+
+Step 27: Automated Task Creation 
+- I am in the process of setting up my Automated tasks but I will provide the general work flow and order of steps on how to create Automated tasks within Shuffler.
+- Define automated tasks in Shuffler corresponding to specific alert types or severity levels.
+- Configure tasks to execute actions such as isolating endpoints, blocking IP addresses, or running predefined scripts.
+- Associate each task with relevant alert criteria, ensuring targeted and effective responses.
+- Test and validate each automated task to ensure proper functionality and accuracy.
+- Following these general steps will help automate tasks for alerts such as mimikatz running, or unauthorized IP addresses. 
+
+Step 28: Integrating Case Management with TheHive
+- I am enjoying setting up Case Management using TheHive and have a set of instructions on how to get this process going, but do not yet have specific automations from Shuffler yet so I am unable to give specific examples.
+- In TheHive navigate to the Integrations section.
+- Select Shuffler as an integration to add, providing necessary authentication details if required.
+- Specify the criteria for case creation, such as severity level, alert type, or specific tags.
+- Configure case management workflows within TheHive to streamline incident response processes.
+- Ensure integration between Shuffler alerts, automated tasks, and case management within TheHive.
+
+
+
