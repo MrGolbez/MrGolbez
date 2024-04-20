@@ -12,13 +12,27 @@ The Detection Lab project aimed to establish a controlled environment for simula
 - Enhanced knowledge of SIEM configuration and navigation.
 - Development of critical thinking and problem-solving skills in cybersecurity.
 - Configuration of Sysmon for log ingestion into Security Information and Event Management (SIEM) system
-- 
 
 ### Tools Used
 
 - Security Information and Event Management (SIEM) system for log ingestion and analysis with Wazuh.
 - Security Operation Center Case Management and SOAR workflow using TheHive and Shuffler.io workflow.
 - Telemetry generation tools to create realistic network traffic and attack scenarios.
+
+## Workflow Example that our logical diagram depicts.
+
+1. Wazuh detects a critical security alert indicating potential malware activity on an endpoint.
+2. The alert triggers an automated task in Shuffler, initiating a predefined response action.
+3. Shuffler executes the task, isolating the affected endpoint from the network and blocking associated IP addresses.
+4. Simultaneously, Shuffler logs relevant details of the incident and response actions into TheHive.
+5. TheHive automatically creates a new case based on the severity level and alert type, populating it with pertinent information from Shuffler logs.
+6. Security analysts in TheHive can collaborate within the case, investigate further, and coordinate response efforts.
+7. Upon resolution of the incident, TheHive archives the case, providing a comprehensive record of the incident and response actions taken.
+
+## Visual Diagram of our SOC Automation Lab
+
+![Security Operations Center Lab](https://imgur.com/7dtFK5N)
+
 
 ## Project Walkthrough
 
@@ -239,5 +253,15 @@ Step 28: Integrating Case Management with TheHive
 - Configure case management workflows within TheHive to streamline incident response processes.
 - Ensure integration between Shuffler alerts, automated tasks, and case management within TheHive.
 
+
+Conclusion
+
+By following these detailed steps, you can establish a fully functional SOC Automation Lab equipped with advanced detection, analysis, and response capabilities.
+Continuously update and refine your configurations and strategies to stay ahead of evolving threats in the cybersecurity landscape.
+
+This was a long and tedious process but extremely amazing project and I appreciate the youtuber MYDFIR for this project idea and information they gave the workflow. 
+I am still working on setting up the automation using Shuffler and TheHive, but have had to do it little slower because of working on my Senior Project for Computer 
+Technology BA. Be sure to stay tuned in for updates with screenshots my automation workflow!
+I appreciate you taking the time and reading and going through this project with me. 
 
 
