@@ -23,10 +23,10 @@ My journey in computer technology has led me to develop a passion for cybersecur
 
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
-| SIEM Implementation and Log Analysis          | <a href= "https://github.com/MrGolbez/MrGolbez/blob/main/SOC%20Automation%20Lab">SOC Automation Lab</a>|
-| Security Automation with Shuffle SOAR         | <a href= "https://github.com/MrGolbez/MrGolbez/blob/main/SOC%20Automation%20Lab">SOC Automation Lab</a>|
-| Case Management with TheHive                  | <a href= "https://github.com/MrGolbez/MrGolbez/blob/main/SOC%20Automation%20Lab">SOC Automation Lab</a>|
-| Scripting and Automation for Threat Mitigation | <a href= "https://github.com/MrGolbez/MrGolbez/blob/main/SOC%20Automation%20Lab">SOC Automation Lab</a>|
+| SIEM Implementation and Configuration       | <a href= "https://github.com/MrGolbez/MrGolbez/blob/main/SOC%20Automation%20Lab">SOC Automation Lab</a>|
+|         | <a href= ""></a>|
+| Case Management with TheHive                  | <a href= ""></a>|
+| PowerShell User Creation Scripts for Active Directory Home Lab | <a href= "https://github.com/MrGolbez/Active-Directory-PowerShell">Active Directory PowerShell Scripts</a>|
 | Azure Sentinel Honeypot lab for hardening      | Azure Honeynet Lab (Walkthrough in progress)|
 
 ## Tools
@@ -51,7 +51,7 @@ My journey in computer technology has led me to develop a passion for cybersecur
 ### SIEM
 <div>
     <img src="https://img.shields.io/badge/-Microsoft_Sentinel-0078D4?&style=for-the-badge&logo=Microsoft&logoColor=white" />
-    <img src="https://img.shields.io/badge/-Elastic-005571?&style=for-the-badge&logo=Elastic&logoColor=white" />
+    <img src="https://img.shields.io/badge/-IBM QRadar-005571?&style=for-the-badge&logo=IBM QRadarc&logoColor=white" />
     <img src="https://img.shields.io/badge/-Splunk-000000?&style=for-the-badge&logo=Splunk&logoColor=white" />
     <img src="https://img.shields.io/badge/-Wazuh-005571?&style=for-the-badge&logo=Wazuh&logoColor=white" />
 </div>
@@ -60,7 +60,6 @@ My journey in computer technology has led me to develop a passion for cybersecur
 <div>
 <img src="https://img.shields.io/badge/-Security%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
 <img src="https://img.shields.io/badge/-AWS%20Certified%20Cloud%20Practitioner-FF9900?&style=for-the-badge&logo=Amazon%20AWS&logoColor=white" />
-<img src="https://img.shields.io/badge/-Google%20Cybersecurity%20-4285F4?&style=for-the-badge&logo=Google%20Cloud&logoColor=white" />
 </div>
 
 ## Projects
@@ -68,3 +67,4 @@ My journey in computer technology has led me to develop a passion for cybersecur
 - Azure Sentinel Honeypot Project (Ongoing Senior Project)
 - Active Directory Lab (Project guide in progress)
 - Tryhackme & HackTheBox Challenges
+- TheHive Case Management
