@@ -12,7 +12,7 @@ My journey in computer technology has led me to develop a passion for cybersecur
 
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
-| SIEM Implementation and Configuration       | <a href= "https://github.com/MrGolbez/MrGolbez/blob/main/SOC%20Automation%20Lab">SOC Automation Lab</a>|
+| SIEM Implementation and Configuration       | <a href= "https://github.com/MrGolbez/SOC_Automation_Lab">SOC Automation Lab</a>|
 |         | <a href= ""></a>|
 | Case Management with TheHive                  | <a href= ""></a>|
 | PowerShell User Creation Scripts for Active Directory Home Lab | <a href= "https://github.com/MrGolbez/Active-Directory-PowerShell">Active Directory PowerShell Scripts</a>|
