@@ -1,7 +1,7 @@
 # Hello, I'm Marty Crane
 <a href="https://www.linkedin.com/in/martycrane/"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 
-I am a recent graduate with a profound interest in technology and a dedication to solving complex problems.
+Passionate and dedicated Cybersecurity Analyst with a proven track record in 24x7 SOC operations, incident response, and proactive threat defense. Recently achieved Associate of (ISC)² - CISSP, demonstrating advanced knowledge of information security principles while actively gaining the professional experience required for full CISSP certification.
 
 ## Objective
 
