@@ -1,32 +1,29 @@
 # Hello, I'm Marty Crane
 <a href="https://www.linkedin.com/in/martycrane/"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 
-Skilled in leveraging industry-leading tools such as Splunk ES, CrowdStrike Falcon, and SentinelOne to monitor, analyze, and remediate security incidents efficiently. Proficient in threat hunting, log analysis, and phishing mitigation, with expertise in frameworks like MITRE ATT&CK, NIST, and OWASP Top 10. 
+My journey into cloud architecture and cybersecurity didn't begin in a server room—it started out in the field. For seven years, I worked as a termite inspector, meticulously investigating complex physical structures to identify hidden vulnerabilities that could lead to catastrophic failure. Realizing I could apply that same analytical, threat-hunting mindset to digital infrastructure, I pivoted my career into enterprise IT. To solidify this transition, I earned both my Bachelor's and my Master of Science in Cybersecurity from CSU Dominguez Hills, officially graduating in December 2025.
 
-I spend my weekends pursuing a Master of Science in Cybersecurity at CSU Dominguez Hills, where I continue to expand and refine my technical and leadership abilities through academic excellence and hands-on projects. As President of the CSUDH Cyber Security Club, I’ve organized student-led conferences, hackathons, and workshops, empowering others to gain practical cybersecurity skills. I am committed to continuous learning and making a meaningful impact in protecting organizations from evolving cyber threats. I am open to opportunities to contribute to security initiatives, strengthen defenses, and grow as a cybersecurity professional.
+Today, I am focused on designing secure, highly available, and automated cloud environments as a Cloud Solutions Architect and Systems Reliability Engineer (SRE). Skilled in leveraging Microsoft Azure, CI/CD pipelines, and configuration management tools, I specialize in bridging the gap between robust cybersecurity practices and modern cloud operations. During my academic career, I served as President of the CSUDH Cyber Security Club, organizing student-led conferences and empowering others to gain practical skills. I am committed to continuous learning and am actively building solutions that drive operational resilience and secure digital transformation.
 
 ## Objective
 
-Passionate and results-driven Cybersecurity Analyst with hands-on experience in SOC operations, threat detection, and incident response. Skilled in SIEM analysis, endpoint security, vulnerability management, and security automation, with expertise in tools such as Splunk ES, IBM QRadar, CrowdStrike, and SentinelOne. Strong understanding of cyber defense frameworks (MITRE ATT&CK, NIST, OWASP Top 10) and risk mitigation strategies.
+Passionate and results-driven Cloud Architect with a newly minted M.S. in Cybersecurity and hands-on experience in Azure infrastructure, serverless computing, and enterprise application support. Skilled in deploying automated workflows using Jenkins and GitHub Actions, managing databases (SQL Server, Cosmos DB), and securing edge networks with Cloudflare and Azure CDN. 
 
-My goal is to build a career in Security Operations, applying my technical expertise to monitor, detect, and respond to cyber threats in real-time. I am committed to continuous learning and professional development, with the long-term objective of growing into a Cybersecurity Engineer role, where I can design and implement proactive security solutions, enhance detection capabilities, and contribute to a stronger cybersecurity posture.
+My goal is to build a career in Cloud Architecture and SRE, applying my technical expertise to automate deployments, ensure high availability, and design secure multi-tier applications. I am actively working toward my **Microsoft Azure Administrator (AZ-104)** certification and continually expanding my capabilities in Infrastructure as Code (IaC) and containerization to contribute to a stronger, more resilient enterprise cloud posture.
 
-
-Skills & Interests: Threat Hunting | SIEM & Log Analysis | Incident Response | Security Engineering | Cloud Security | Vulnerability Management | Security Automation | Ethical Hacking
+**Skills & Interests:** Cloud Architecture | Microsoft Azure | Site Reliability Engineering (SRE) | CI/CD Pipelines | Serverless Computing | Identity & Access Management (IAM) | Infrastructure as Code | Network Security
 
 ## Certifications
 <div>
-    <img src="https://img.shields.io/badge/-Security%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
-    <img src="https://img.shields.io/badge/-AWS%20Certified%20Cloud%20Practitioner-FF9900?&style=for-the-badge&logo=Amazon%20AWS&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Microsoft%20AZ--104%20(In%20Progress)-0078D4?&style=for-the-badge&logo=Microsoft%20Azure&logoColor=white" />
     <img src="https://img.shields.io/badge/-Associate%20of%20ISC²%20(CISSP)-2C3E50?&style=for-the-badge&logo=ISC2&logoColor=white" />
+    <img src="https://img.shields.io/badge/-CompTIA%20CySA%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Security%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Network%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
 </div>
 
-
-
 ## Projects
-- Jenkins CICD Pipeline project
-- SOC Automation Project
-- Splunk Detection Labs
-- Wireshark Labs
-
-
+- **Azure Serverless Architecture (Cloud Resume Challenge):** Built a highly available, edge-cached static web app using Azure Storage, Cloudflare DNS, Azure Functions (Python), and Cosmos DB.
+- **Enterprise Jenkins CI/CD Pipeline:** Architected an automated testing and deployment pipeline for continuous integration.
+- **Automated Web Farm Configuration:** Utilized Ansible to automate the deployment and configuration of IIS web servers and load balancing in a virtualized environment.
+- **Active Directory & IAM Lab:** Designed a secure Windows Server environment enforcing RBAC, strict GPOs, and Entra ID integration.
