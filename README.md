@@ -1,29 +1,110 @@
-# Hello, I'm Marty Crane
+# Hello, I'm Marty Crane  
 <a href="https://www.linkedin.com/in/martycrane/"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 
-My journey into cloud architecture and cybersecurity didn't begin in a server room—it started out in the field. For seven years, I worked as a termite inspector, meticulously investigating complex physical structures to identify hidden vulnerabilities that could lead to catastrophic failure. Realizing I could apply that same analytical, threat-hunting mindset to digital infrastructure, I pivoted my career into enterprise IT. To solidify this transition, I earned both my Bachelor's and my Master of Science in Cybersecurity from CSU Dominguez Hills, officially graduating in December 2025.
+🌐 **Live Cloud Resume:** https://martycrane.com  
 
-Today, I am focused on designing secure, highly available, and automated cloud environments as a Cloud Solutions Architect and Systems Reliability Engineer (SRE). Skilled in leveraging Microsoft Azure, CI/CD pipelines, and configuration management tools, I specialize in bridging the gap between robust cybersecurity practices and modern cloud operations. During my academic career, I served as President of the CSUDH Cyber Security Club, organizing student-led conferences and empowering others to gain practical skills. I am committed to continuous learning and am actively building solutions that drive operational resilience and secure digital transformation.
+---
+
+## About Me
+
+I’m a Cloud and Cybersecurity professional with a Master of Science in Cybersecurity from CSU Dominguez Hills, focused on designing secure, scalable, and automated cloud environments.
+
+My background started in field inspections, where I developed a strong analytical mindset for identifying hidden risks in complex systems. I’ve since applied that same approach to cloud infrastructure—focusing on reliability, security, and operational efficiency.
+
+Today, I specialize in:
+- Building **serverless cloud architectures in Azure**
+- Automating deployments with **CI/CD pipelines**
+- Designing systems with **security-first principles**
+- Bridging the gap between **cloud engineering and cybersecurity**
+
+I am actively working toward my **Microsoft Azure Administrator (AZ-104)** certification and continuing to build real-world cloud projects that demonstrate production-level architecture and DevOps practices.
+
+---
 
 ## Objective
 
-Passionate and results-driven Cloud Architect with a newly minted M.S. in Cybersecurity and hands-on experience in Azure infrastructure, serverless computing, and enterprise application support. Skilled in deploying automated workflows using Jenkins and GitHub Actions, managing databases (SQL Server, Cosmos DB), and securing edge networks with Cloudflare and Azure CDN. 
+Cloud-focused engineer pursuing roles in **Cloud Engineering, Cloud Architecture, and Site Reliability Engineering (SRE)**.
 
-My goal is to build a career in Cloud Architecture and SRE, applying my technical expertise to automate deployments, ensure high availability, and design secure multi-tier applications. I am actively working toward my **Microsoft Azure Administrator (AZ-104)** certification and continually expanding my capabilities in Infrastructure as Code (IaC) and containerization to contribute to a stronger, more resilient enterprise cloud posture.
+I aim to design and maintain highly available systems, automate infrastructure and deployments, and implement secure, scalable cloud solutions that support modern enterprise environments.
 
-**Skills & Interests:** Cloud Architecture | Microsoft Azure | Site Reliability Engineering (SRE) | CI/CD Pipelines | Serverless Computing | Identity & Access Management (IAM) | Infrastructure as Code | Network Security
+---
+
+## Skills & Technologies
+
+**Cloud & Infrastructure:** Microsoft Azure, Azure Functions, Azure Storage, Azure CDN, Cosmos DB  
+**DevOps & Automation:** GitHub Actions, Jenkins, CI/CD Pipelines  
+**Programming & Scripting:** Python, Bash  
+**Security & Networking:** IAM, Network Security, Cloudflare, Secure Architecture Design  
+**Infrastructure as Code:** ARM Templates (in progress), Configuration Management  
+
+---
 
 ## Certifications
+
 <div>
-    <img src="https://img.shields.io/badge/-Microsoft%20AZ--104%20(In%20Progress)-0078D4?&style=for-the-badge&logo=Microsoft%20Azure&logoColor=white" />
-    <img src="https://img.shields.io/badge/-Associate%20of%20ISC²%20(CISSP)-2C3E50?&style=for-the-badge&logo=ISC2&logoColor=white" />
+    <img src="https://img.shields.io/badge/-CompTIA%20A%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
+    <img src="https://img.shields.io/badge/-CompTIA%20Network%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
+    <img src="https://img.shields.io/badge/-CompTIA%20Security%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
     <img src="https://img.shields.io/badge/-CompTIA%20CySA%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
-    <img src="https://img.shields.io/badge/-Security%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
-    <img src="https://img.shields.io/badge/-Network%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Associate%20of%20ISC%C2%B2%20(CISSP)-2C3E50?&style=for-the-badge&logo=ISC2&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Microsoft%20AZ--104%20(In%20Progress)-0078D4?&style=for-the-badge&logo=Microsoft%20Azure&logoColor=white" />
 </div>
 
+---
+
 ## Projects
-- **Azure Serverless Architecture (Cloud Resume Challenge):** Built a highly available, edge-cached static web app using Azure Storage, Cloudflare DNS, Azure Functions (Python), and Cosmos DB.
-- **Enterprise Jenkins CI/CD Pipeline:** Architected an automated testing and deployment pipeline for continuous integration.
-- **Automated Web Farm Configuration:** Utilized Ansible to automate the deployment and configuration of IIS web servers and load balancing in a virtualized environment.
-- **Active Directory & IAM Lab:** Designed a secure Windows Server environment enforcing RBAC, strict GPOs, and Entra ID integration.
+
+### 🔹 Cloud Resume Challenge (Azure)
+Designed and deployed a production-style serverless web application hosted on Azure.
+
+- Built a static resume site using **Azure Storage Static Website + CDN**
+- Implemented a **serverless backend with Azure Functions (Python)**
+- Integrated **Cosmos DB (Table API)** for persistent visitor tracking
+- Configured **custom domain (martycrane.com) with HTTPS**
+- Designed architecture with scalability, cost-efficiency, and security in mind
+- (In progress) Automating deployments with **GitHub Actions CI/CD**
+
+---
+
+### 🔹 Enterprise CI/CD Pipeline
+Developed an automated CI/CD pipeline to streamline application deployment.
+
+- Built using **Jenkins**
+- Automated testing and deployment workflows
+- Reduced manual deployment overhead and improved consistency
+
+---
+
+### 🔹 Automated Infrastructure Deployment
+Automated server configuration and deployment in a virtualized environment.
+
+- Used **Ansible** for configuration management
+- Deployed and configured IIS web servers
+- Implemented load balancing and repeatable infrastructure setup
+
+---
+
+### 🔹 Identity & Access Management Lab
+Designed a secure enterprise-style identity environment.
+
+- Configured **Active Directory with RBAC and Group Policy**
+- Integrated with **Microsoft Entra ID**
+- Applied least privilege and access control best practices
+
+---
+
+## What I’m Working On
+
+- Completing **Azure Administrator (AZ-104)**
+- Implementing **Infrastructure as Code (ARM templates)**
+- Building full **CI/CD pipelines for cloud deployments**
+- Expanding into **containerization and Kubernetes**
+
+---
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/in/martycrane/  
+- Portfolio: https://martycrane.com  
+
+---
